@@ -976,6 +976,7 @@
             <li><a href="#structure" data-section="structure">Skills</a></li>
             <li><a href="#logic" data-section="logic">Lógica</a></li>
             <li><a href="#projects" data-section="projects">Proyectos</a></li>
+            <li><a href="#ai-bot" data-section="ai-bot">Chatbot</a></li>
             <li><a href="#contact" data-section="contact">Contacto</a></li>
         </ul>
         <div class="nav-status">
@@ -1164,10 +1165,32 @@
         </div>
     </section>
 
-    <!-- SECTION 5: CONTACT FOOTER -->
+    <div class="section-divider"></div>
+
+    <!-- SECTION 5: AI BOT -->
+    <section class="section-container" id="ai-bot">
+        <div class="card cascade-container" id="ai-card" style="padding: 0; overflow: hidden;">
+            <div style="padding: clamp(30px, 5vw, 40px) clamp(30px, 5vw, 40px) 20px;">
+                <h3 class="cascade-item">04. ASISTENTE DE IA</h3>
+                <h2 class="cascade-item">Interactúa con mi Chatbot RAG</h2>
+                <p class="cascade-item" style="margin-bottom: 0;">Prueba este agente entrenado con base documental, capaz de mantener contexto y responder preguntas de manera autónoma.</p>
+            </div>
+            <div class="cascade-item" style="width: 100%; height: 700px; border-top: 1px solid rgba(255, 225, 0, 0.08); background: rgba(0,0,0,0.2);">
+                <iframe
+                    src="https://www.chatbase.co/chatbot-iframe/B1LKEClfVAafIHZx7HlkP"
+                    width="100%"
+                    style="height: 100%; min-height: 700px; border: none; background: transparent;"
+                    frameborder="0"
+                    allow="microphone"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT FOOTER -->
     <section class="contact-footer" id="contact">
         <div class="contact-footer-inner">
-            <h3>04. CONTACTO</h3>
+            <h3>05. CONTACTO</h3>
             <h2>INICIAR PROTOCOLO DE CONTACTO</h2>
             <p class="contact-subtitle">¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a construirlo.</p>
             <div class="contact-grid">
@@ -1356,6 +1379,7 @@
                 { id: 'structure', navKey: 'structure' },
                 { id: 'logic',     navKey: 'logic'    },
                 { id: 'projects',  navKey: 'projects'  },
+                { id: 'ai-bot',    navKey: 'ai-bot'    },
                 { id: 'contact',   navKey: 'contact'   },
             ];
 
@@ -1539,7 +1563,7 @@
                             entry.target.style.transform = 'translateY(0)';
                             startTypewriter();
                         }
-                        else if (id === 'projects-card') {
+                        else if (id === 'projects-card' || id === 'ai-card') {
                             entry.target.classList.add('visible');
                         }
                     }
@@ -1550,6 +1574,7 @@
             uiObserver.observe(document.getElementById('structure-card'));
             uiObserver.observe(document.getElementById('logic-card'));
             uiObserver.observe(document.getElementById('projects-card'));
+            uiObserver.observe(document.getElementById('ai-card'));
 
 
             // ---------------------------------------------------------
