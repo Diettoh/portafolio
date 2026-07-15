@@ -919,37 +919,129 @@
         }
 
         /* ==========================================================================
-           RESPONSIVE
+           RESPONSIVE — Mobile first
            ========================================================================== */
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; letter-spacing: -1px; }
-            .section-container { padding: 100px 16px 60px; }
-            .card { padding: 24px; border-radius: 14px; }
-            .skill-matrix { grid-template-columns: 1fr; }
-            .diagnostic-grid { grid-template-columns: repeat(2, 1fr); }
-            .etl-container { flex-direction: column; gap: 12px; }
-            .etl-arrow { transform: rotate(90deg); }
-            .nav-links { 
-                display: none; 
+            /* --- Typography --- */
+            h1 { font-size: 2.2rem; letter-spacing: -1px; }
+            h2 { font-size: 1.2rem; letter-spacing: 1px; }
+
+            /* --- Layout --- */
+            .section-container { padding: 90px 14px 50px; min-height: auto; }
+            .card { padding: 20px 16px; border-radius: 12px; }
+
+            /* --- Navbar --- */
+            .nav-links {
+                display: none;
                 position: absolute;
                 top: var(--nav-height);
                 left: 0; right: 0;
-                background: rgba(3, 1, 8, 0.95);
+                background: rgba(3, 1, 8, 0.97);
                 backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 16px 0;
+                padding: 12px 0;
                 border-bottom: 1px solid rgba(255,225,0,0.1);
                 animation: slideDownNav 0.3s var(--ease-out-expo) forwards;
                 transform-origin: top;
+                z-index: 9997;
             }
             @keyframes slideDownNav {
                 from { opacity: 0; transform: scaleY(0.8); }
-                to { opacity: 1; transform: scaleY(1); }
+                to   { opacity: 1; transform: scaleY(1); }
             }
             .nav-links.open { display: flex; }
+            .nav-links li { width: 100%; }
+            .nav-links a { display: block; padding: 12px 24px; font-size: 0.85rem; }
             .nav-toggle { display: block; }
             .nav-status { display: none; }
             .hero-scroll-hint { display: none; }
+
+            /* --- Skills matrix --- */
+            .skill-matrix { grid-template-columns: 1fr; gap: 20px; }
+
+            /* --- Diagnostic grid --- */
+            .diagnostic-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .diag-val { font-size: 1.4rem; }
+
+            /* --- ETL flow --- */
+            .etl-container { flex-direction: column; gap: 10px; padding: 16px; }
+            .etl-arrow { transform: rotate(90deg); display: inline-block; }
+
+            /* --- Typewriter terminal --- */
+            #typewriter-container {
+                font-size: 0.72rem;
+                padding: 14px 14px;
+                min-height: 140px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-break: break-word;
+                line-height: 1.6;
+            }
+
+            /* --- Automation Playground --- */
+            .node-palette {
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .palette-item {
+                font-size: 0.72rem;
+                padding: 5px 10px;
+            }
+            .play-btn {
+                margin-left: 0;
+                width: 100%;
+                justify-content: center;
+                margin-top: 4px;
+            }
+            #flow-playground {
+                height: 260px;
+                touch-action: none;
+            }
+            .flow-console {
+                width: calc(100% - 20px);
+                max-height: 80px;
+                font-size: 0.6rem;
+                right: 10px;
+                bottom: 8px;
+            }
+            .node-settings-modal {
+                width: calc(100% - 20px);
+                left: 10px;
+                top: 8px;
+            }
+
+            /* --- Projects log items --- */
+            .log-item { padding: 14px 10px; }
+
+            /* --- Contact footer --- */
+            .contact-footer { padding: 40px 14px 40px; }
+            .contact-footer-inner { padding: 32px 20px; }
+            .contact-grid { flex-direction: column; align-items: stretch; gap: 12px; }
+            .contact-link-btn {
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 0.85rem;
+            }
+
+            /* --- Chatbot iframe section --- */
+            #ai-bot .card { padding: 0; }
+            #ai-bot iframe { min-height: 500px; height: 500px; }
+
+            /* --- Hero badges --- */
+            .hero-badges { gap: 8px; }
+            .badge { font-size: 0.7rem; padding: 5px 10px; }
+
+            /* --- Modal --- */
+            .project-modal { width: 95%; padding: 24px 18px; }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.8rem; }
+            #typewriter-container { font-size: 0.65rem; padding: 12px 10px; }
+            .diagnostic-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .diag-val { font-size: 1.2rem; }
         }
     </style>
 </head>
